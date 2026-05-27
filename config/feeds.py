@@ -2,13 +2,12 @@
 
 RSS_FEEDS = {
     # General rail industry
-    "Railway Gazette": "https://www.railwaygazette.com/rss",
+    "Railway Insider": "http://www.railwayinsider.eu/wp/feed",
     "International Railway Journal": "https://www.railjournal.com/feed/",
-    "Global Railway Review": "https://www.globalrailwayreview.com/feed/",
-    "RailTech": "https://www.railtech.com/feed/",
+    "Progressive Railroading": "http://www.progressiverailroading.com/rss/news.asp",
+    "Railway News": "https://railway-news.com/feed/",
 
     # Add more later after the first successful test.
-    # "Railway-News": "https://www.railway-news.com/feed/",
     # "Mass Transit Magazine": "https://www.masstransitmag.com/rss",
 }
 
