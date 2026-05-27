@@ -1,87 +1,166 @@
-"""
-RSS feed configuration.
-Easy to modify without changing core code.
-"""
+"""RSS feed configuration for Brendan's weekly rail intelligence report."""
 
-# Example feeds - replace with your own RSS feeds
 RSS_FEEDS = {
-    "Finance & Economics": "https://www.economist.com/finance-and-economics/rss.xml",
-    "Europe": "https://www.economist.com/europe/rss.xml",
-    "Business": "https://www.economist.com/business/rss.xml",
-    "Leaders": "https://www.economist.com/leaders/rss.xml",
-    "International": "https://www.economist.com/international/rss.xml",
-    "Science & Technology": "https://www.economist.com/science-and-technology/rss.xml",
-    "Data journalism" : "https://www.economist.com/graphic-detail/rss.xml"
+    # General rail industry
+    "Railway Gazette": "https://www.railwaygazette.com/rss",
+    "International Railway Journal": "https://www.railjournal.com/feed/",
+    "Global Railway Review": "https://www.globalrailwayreview.com/feed/",
+    "RailTech": "https://www.railtech.com/feed/",
+
+    # Add more later after the first successful test.
+    # "Railway-News": "https://www.railway-news.com/feed/",
+    # "Mass Transit Magazine": "https://www.masstransitmag.com/rss",
 }
 
-# LLM Prompt for digest generation
-# Customize this prompt based on your interests and the type of content you're tracking
-DIGEST_GENERATION_PROMPT = """You are creating a weekly digest for a European data journalist interested in markets and policy.
+DIGEST_GENERATION_PROMPT = """
+You are generating a weekly rail-sector intelligence report for Brendan Warner.
 
+CONTEXT ABOUT BRENDAN:
+Brendan is a mechanical engineer from the United States working in Madrid, Spain. He is developing a career in passenger rail, rolling stock maintenance, rail systems integration, testing, inspection, certification, and technical documentation.
+
+He works at SGS Tecnos in Madrid, where he is helping develop a rail testing, inspection, and certification business line. He is especially interested in identifying realistic opportunities related to rolling stock electronic equipment, EMC, environmental testing, shock and vibration, fire safety, power electronics, suppliers, certification, conformity assessment, and standards-driven testing.
+
+He is also working as a technician at Erion in Madrid. He wants practical guidance for making the most of time around experienced rail maintenance professionals: what to ask, what to observe, what systems to learn, what Spanish/English technical vocabulary to develop, and how to connect hands-on maintenance experience with future engineering, testing, certification, and systems-integration roles.
+
+LONG-TERM CAREER DIRECTION:
+Brendan is interested in roles such as:
+- rolling stock systems integration engineer
+- rail systems engineer
+- rolling stock maintenance engineer
+- equipment engineer
+- testing / validation / verification engineer
+- certification / conformity assessment engineer
+- technical documentation or requirements engineer
+- fleet modernization or depot/workshop technology specialist
+
+Companies and organizations of interest include:
+- SGS Tecnos
+- Erion
+- Renfe
+- ADIF
+- Metro de Madrid
+- CAF
+- Talgo
+- Alstom
+- Siemens Mobility
+- Stadler
+- Amtrak
+- MTA / New York City Transit
+- other passenger rail operators, OEMs, suppliers, and testing/certification bodies
+
+PRIORITY TOPICS:
+Prioritize articles related to:
+- rolling stock
+- material rodante
+- fleet modernization
+- depot and workshop technology
+- maintenance, overhaul, inspection, diagnostics
+- predictive maintenance and condition monitoring
+- traction systems
+- motors
+- converters, inverters, auxiliary power, batteries, chargers, UPS
+- onboard electronics
+- signalling, ERTMS, ETCS, CBTC, train control
+- EMC and EN 50121
+- EN 50155
+- EN 61373
+- EN 45545
+- environmental testing
+- shock and vibration
+- testing, inspection, certification, homologation, conformity assessment
+- rail suppliers and component manufacturers
+- Spanish and European rail projects
+- Renfe, ADIF, Metro de Madrid, CAF, Talgo, Alstom, Siemens, Stadler
+
+SOURCE MATERIAL:
 ARTICLES FROM {date_range} ({article_count} articles):
 {article_list}
 
-TONE AND LANGUAGE:
-- Use factual, descriptive language
-- State what happened, where, when, who was involved, and direct factual consequences
-- Let events speak for themselves through clear description
-- Focus on observable actions and stated positions
-- Write in plain, straightforward prose
+TASK:
+Analyze the articles and create a weekly intelligence report.
 
-TASK: Analyze these articles and create a comprehensive digest with the following sections:
+IMPORTANT RULES:
+- Do not invent facts.
+- Use only the article information provided.
+- Clearly separate confirmed facts from possible implications.
+- Do not claim that something is an SGS opportunity unless the article supports it.
+- Do not invent details about SGS Tecnos, Erion, their clients, equipment, contracts, or internal procedures.
+- If relevance is speculative, say “possible relevance” or “potential implication.”
+- Favor concrete, practical analysis over generic commentary.
+- Each article should appear only once in the main report unless it is necessary to cross-reference it.
+- Include links to article titles where possible.
+- Return only clean HTML content for the digest body. Do not include html/head/body tags.
 
-1. THIS WEEK'S BIG PICTURE
-   - Analyze all articles to identify the main story or theme this week
-   - Write ONE paragraph describing the main developments in simple, factual language
-   - Focus on what's happening that matters most
+REPORT STRUCTURE:
 
-2. TOP 3 ARTICLES TO READ
-   - Select the 3 most important/interesting articles based on:
-     * Relevance to European data journalists
-     * Impact on markets and policy
-     * Data journalism opportunities
-   - For each article provide:
-     * Title (as clickable link using the URL)
-     * 2-3 sentence summary in plain language
-     * Key context or direct impact (1 sentence, stated factually)
+## 1. Executive summary
+Write one concise paragraph explaining the most important rail-sector themes this week.
 
-3. WHAT'S HAPPENING
-   Choose ONE article for each theme below (select DIFFERENT articles from those in TOP 3):
+## 2. Most important developments
+Select the most important articles. For each:
+- Article title as a clickable link
+- What happened
+- Why it matters
+- Relevance level: High / Medium / Low
+- Primary theme: rolling stock, maintenance, signalling, certification, infrastructure, market, policy, etc.
 
-   IN EUROPE:
-   - Article title (as clickable link)
-   - Simple 2-sentence summary
-   - Focus on European politics, economy, or EU policy
+## 3. Spain / Europe relevance
+Identify developments relevant to Spain, the EU, European rail suppliers, operators, regulation, procurement, fleet modernization, or standards.
 
-   INTERNATIONALLY:
-   - Article title (as clickable link)
-   - Simple 2-sentence summary
-   - Focus on global context relevant to Europe
+## 4. Rolling stock, maintenance, and systems relevance
+Explain what the articles suggest about rolling stock technology, maintenance practice, fleet modernization, diagnostics, workshops, depots, systems integration, traction, auxiliary systems, braking, doors, HVAC, onboard electronics, or signalling interfaces.
 
-   IN THE MARKETS:
-   - Article title (as clickable link)
-   - Simple 2-sentence summary
-   - Include any ECB signals, European markets, or personal finance insights
+## 5. Testing, inspection, certification, and SGS Tecnos relevance
+For relevant articles, explain possible implications for a testing/inspection/certification company developing rail-sector capabilities.
 
-4. DATA JOURNALISM OPPORTUNITIES
-   - Specific story ideas with data angles from the articles
-   - Datasets or sources mentioned
-   - Cross-country comparison opportunities
-   - Trends worth tracking
+Use this format where useful:
+- Possible testing/certification angle:
+- Standards likely involved:
+- Type of supplier/operator affected:
+- Possible commercial relevance:
+- Confidence level:
+- Follow-up question for SGS:
 
-FORMATTING REQUIREMENTS:
-- Use simple, clear language throughout (write like you're explaining to someone who's half asleep)
-- Be to the point, use sober language, state facts directly
-- Describe events as they occurred 
-- Format as clean, semantic HTML:
-  * <h2> for main sections
-  * <h3> for subsections
-  * <p> for paragraphs
-  * <ul>/<li> for lists
-  * <a href="url"> for article links
-- Each article should appear only ONCE in the entire digest
-- Do NOT include introductory text like "Here is your weekly digest..."
-- Return ONLY the HTML content for the digest body (no html/head/body tags)
+Be conservative. Avoid overclaiming.
 
-Begin your analysis and digest creation now:
+## 6. Erion / technician learning opportunities this week
+Translate the week’s developments into practical learning actions for someone working around rail maintenance professionals at Erion.
+
+Include:
+- What Brendan should ask experienced technicians
+- What systems/components he should observe
+- What maintenance or diagnostic procedures he should try to understand
+- Spanish/English vocabulary to learn
+- How the hands-on learning connects to future engineering, testing, certification, or systems-integration work
+
+Make this section practical and specific.
+
+## 7. Professional development implications
+Explain what Brendan should learn, study, or pay attention to based on this week’s news.
+
+Include:
+- technical topics to study
+- standards to review
+- companies to follow
+- job-role relevance
+- skills that connect workshop experience to engineering work
+
+## 8. Suggested actions for next week
+Give 5-10 concrete actions. Separate them into:
+- At SGS
+- At Erion
+- Personal study
+- Networking / companies to follow
+
+## 9. Source list
+List the articles used, grouped by source/feed.
+
+FORMATTING:
+Use clean, semantic HTML:
+- Use <h2> for main sections
+- Use <h3> for subsections
+- Use <p> for paragraphs
+- Use <ul> and <li> for lists
+- Use <a href=""> for article links
+- Do not use markdown
 """
