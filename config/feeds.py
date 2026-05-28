@@ -12,7 +12,7 @@ RSS_FEEDS = {
 }
 
 DIGEST_GENERATION_PROMPT = """
-You are generating a weekly rail-sector intelligence report for Brendan Warner.
+You are generating a twice-weekly rail-sector intelligence brief for Brendan Warner.
 
 CONTEXT ABOUT BRENDAN:
 Brendan is a mechanical engineer from the United States working in Madrid, Spain. He is developing a career in passenger rail, rolling stock maintenance, rail systems integration, testing, inspection, certification, and technical documentation.
@@ -44,8 +44,45 @@ Companies and organizations of interest include:
 - Siemens Mobility
 - Stadler
 - Amtrak
+- Renfe
+- ADIF
+- Metro de Madrid
+- CAF
+- Talgo
+- Alstom
+- Siemens Mobility
+- Stadler
+- Amtrak
 - MTA / New York City Transit
-- other passenger rail operators, OEMs, suppliers, and testing/certification bodies
+- MTA Long Island Rail Road
+- MTA Metro-North Railroad
+- NJ Transit
+- WMATA / Washington Metro
+- MBTA
+- SEPTA
+- Chicago Transit Authority / CTA
+- Chicago Metra
+- BART / Bay Area Rapid Transit
+- LA Metro
+- Caltrain
+- Sound Transit
+- MARTA
+- DART / Dallas Area Rapid Transit
+- RTD Denver
+- Federal Railroad Administration / FRA
+- Federal Transit Administration / FTA
+- USDOT Build America Bureau
+- Northeast Corridor Commission
+- California State Transportation Agency / CalSTA and Caltrans Division of Rail and Mass Transportation
+- Wabtec
+- Knorr-Bremse
+- ABB
+- Schneider Electric
+- TÜV SÜD
+- TÜV Rheinland
+- Bureau Veritas
+- Applus+
+- SGS
 
 PRIORITY TOPICS:
 Prioritize articles related to:
@@ -70,96 +107,113 @@ Prioritize articles related to:
 - rail suppliers and component manufacturers
 - Spanish and European rail projects
 - Renfe, ADIF, Metro de Madrid, CAF, Talgo, Alstom, Siemens, Stadler
+- investment into passenger rail in the USA
 
 SOURCE MATERIAL:
 ARTICLES FROM {date_range} ({article_count} articles):
+
 {article_list}
 
 TASK:
-Analyze the articles and create a weekly intelligence report.
+Create a concise rail intelligence brief. Do not write a generic news summary. Select and interpret the most relevant developments for Brendan.
 
-IMPORTANT RULES:
-- Do not invent facts.
-- Use only the article information provided.
-- Clearly separate confirmed facts from possible implications.
-- Do not claim that something is an SGS opportunity unless the article supports it.
-- Do not invent details about SGS Tecnos, Erion, their clients, equipment, contracts, or internal procedures.
-- If relevance is speculative, say “possible relevance” or “potential implication.”
-- Favor concrete, practical analysis over generic commentary.
-- Each article should appear only once in the main report unless it is necessary to cross-reference it.
-- Include links to article titles where possible.
-- Return only clean HTML content for the digest body. Do not include html/head/body tags.
+ANTI-REPETITION RULES:
+- Mention each article's basic facts only once.
+- Do not repeat the same article in every section.
+- Later sections must add new interpretation, not restate summaries.
+- If an article has no clear relevance to SGS, Erion, rolling stock, maintenance, testing, or certification, keep it brief or omit it from detailed analysis.
+- Group similar articles together instead of analyzing them separately.
+- Avoid repeating company names, standards, or opportunities unless there is a new reason to mention them.
+- Be concise. Prefer 1 strong paragraph over 5 weak bullets.
 
-REPORT STRUCTURE:
+DUPLICATE HANDLING:
+Some feeds may report the same story. Merge duplicate or near-duplicate articles into one development. If two articles cover the same event, cite both links together but analyze the story only once. Do not create separate priority briefings for duplicate versions of the same story.
 
-## 1. Executive summary
-Write one concise paragraph explaining the most important rail-sector themes this week.
+SOURCE PRIORITY:
+When multiple sources cover the same story, prefer the article with the most technical, operational, supplier-specific, maintenance-related, or certification-relevant detail. Do not give extra importance to a story only because it appears in multiple feeds.
 
-## 2. Most important developments
-Select the most important articles. For each:
-- Article title as a clickable link
-- What happened
-- Why it matters
-- Relevance level: High / Medium / Low
-- Primary theme: rolling stock, maintenance, signalling, certification, infrastructure, market, policy, etc.
+RELEVANCE FILTER:
+Only analyze articles in detail if they are relevant to at least one of:
+- rolling stock
+- material rodante
+- maintenance
+- depot/workshop operations
+- traction systems
+- motors
+- converters, inverters, auxiliary power, batteries, chargers, UPS
+- onboard electronics
+- signalling, train control, ERTMS, ETCS, CBTC
+- safety systems
+- testing, inspection, certification, standards, homologation
+- Spain, Europe, US passenger rail, or target companies
 
-## 3. Spain / Europe relevance
-Identify developments relevant to Spain, the EU, European rail suppliers, operators, regulation, procurement, fleet modernization, or standards.
+All other articles should appear only in the source list.
 
-## 4. Rolling stock, maintenance, and systems relevance
-Explain what the articles suggest about rolling stock technology, maintenance practice, fleet modernization, diagnostics, workshops, depots, systems integration, traction, auxiliary systems, braking, doors, HVAC, onboard electronics, or signalling interfaces.
+PRIORITY TOPICS:
+Prioritize:
+- rolling stock and fleet modernization
+- material rodante
+- depot/workshop technology
+- maintenance, diagnostics, overhaul, inspections
+- traction, converters, inverters, motors, auxiliary power, batteries, chargers, UPS
+- onboard electronics
+- signalling, ERTMS, ETCS, CBTC, train-control interfaces
+- EMC, EN 50121, EN 50155, EN 61373, EN 45545
+- environmental, shock/vibration, and fire testing
+- testing, inspection, certification, homologation, conformity assessment
+- Spanish, European, and US passenger rail
+- suppliers, OEMs, operators, and fleet modernization programs
 
-## 5. Testing, inspection, certification, and SGS Tecnos relevance
-For relevant articles, explain possible implications for a testing/inspection/certification company developing rail-sector capabilities.
+OUTPUT FORMAT:
+Return clean semantic HTML only. Do not include html, head, or body tags.
 
-Use this format where useful:
-- Possible testing/certification angle:
-- Standards likely involved:
-- Type of supplier/operator affected:
-- Possible commercial relevance:
-- Confidence level:
-- Follow-up question for SGS:
+Use this structure:
 
-Be conservative. Avoid overclaiming.
+<h2>Executive summary</h2>
+One short paragraph with the main pattern across the articles.
 
-## 6. Erion / technician learning opportunities this week
-Translate the week’s developments into practical learning actions for someone working around rail maintenance professionals at Erion.
+<h2>Priority briefings</h2>
+Select only the 5 to 8 most important developments. For each:
+<h3>Article title</h3>
+<ul>
+  <li><strong>What happened:</strong> factual summary in 1 sentence</li>
+  <li><strong>Why it matters:</strong> practical rail-sector meaning</li>
+  <li><strong>Relevance:</strong> High / Medium / Low</li>
+  <li><strong>Main lens:</strong> rolling stock / maintenance / signalling / TIC / supplier / policy / safety / other</li>
+</ul>
 
-Include:
-- What Brendan should ask experienced technicians
-- What systems/components he should observe
-- What maintenance or diagnostic procedures he should try to understand
-- Spanish/English vocabulary to learn
-- How the hands-on learning connects to future engineering, testing, certification, or systems-integration work
+<h2>Cross-cutting patterns</h2>
+Do not repeat article summaries. Identify 2 to 4 patterns across the week, such as fleet renewal, signalling modernization, safety, certification demand, maintenance technology, supplier movement, or digitalization.
 
-Make this section practical and specific.
+<h2>SGS Tecnos / TIC relevance</h2>
+Only discuss articles with a plausible testing, inspection, certification, conformity assessment, EMC, environmental, mechanical, fire, or standards angle.
+For each relevant theme, include:
+<ul>
+  <li><strong>Possible TIC angle:</strong></li>
+  <li><strong>Standards possibly involved:</strong></li>
+  <li><strong>Confidence:</strong> High / Medium / Low</li>
+  <li><strong>Follow-up question:</strong></li>
+</ul>
+Be conservative. Do not invent SGS capabilities, clients, or opportunities.
 
-## 7. Professional development implications
-Explain what Brendan should learn, study, or pay attention to based on this week’s news.
+<h2>Erion / technician learning</h2>
+Do not repeat news summaries. Translate the week into practical learning prompts:
+<ul>
+  <li><strong>Ask:</strong> questions to ask experienced technicians</li>
+  <li><strong>Observe:</strong> systems, components, procedures, or failure modes to watch</li>
+  <li><strong>Vocabulary:</strong> Spanish / English technical terms to learn</li>
+</ul>
 
-Include:
-- technical topics to study
-- standards to review
-- companies to follow
-- job-role relevance
-- skills that connect workshop experience to engineering work
+<h2>Suggested actions before the next report</h2>
+Give 5 concrete actions. Keep them realistic for someone working/studying in Madrid.
 
-## 8. Suggested actions for next week
-Give 5-10 concrete actions. Separate them into:
-- At SGS
-- At Erion
-- Personal study
-- Networking / companies to follow
+<h2>Source list</h2>
+List every article considered, with clickable title, feed name, and date. If multiple articles covered the same story, group them under the same source-list item where practical.
 
-## 9. Source list
-List the articles used, grouped by source/feed.
-
-FORMATTING:
-Use clean, semantic HTML:
-- Use <h2> for main sections
-- Use <h3> for subsections
-- Use <p> for paragraphs
-- Use <ul> and <li> for lists
-- Use <a href=""> for article links
-- Do not use markdown
+STYLE:
+- Direct, technical, and concise.
+- No hype.
+- No repeated explanations.
+- Separate confirmed facts from possible implications.
+- Use cautious language: "possible", "may indicate", "worth watching", "not confirmed by the article".
 """
