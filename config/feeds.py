@@ -5,7 +5,10 @@ RSS_FEEDS = {
     "Railway Insider": "http://www.railwayinsider.eu/wp/feed",
     "International Railway Journal": "https://www.railjournal.com/feed/",
     "Progressive Railroading": "http://www.progressiverailroading.com/rss/news.asp",
-    "Railway News": "https://railway-news.com/feed/",
+    "Amtrak Media": "https://media.amtrak.com/feed/",
+    "Railway Technology": "https://rss.app/feeds/kfuPT5yZU958Sllw.xml",
+    "Metro Magazine": "https://rss.app/feeds/G98e3UuWWR8JA6PQ.xml",
+    "Railway Gazette International": "https://rss.app/feeds/bmNvSnZTD7LItmfW.xml",
 
     # Add more later after the first successful test.
     # "Mass Transit Magazine": "https://www.masstransitmag.com/rss",
