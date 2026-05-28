@@ -1,0 +1,14 @@
+http://www.railwayinsider.eu/wp/feed
+https://news.google.com/news/rss/search/section/q/railway%20technology/railway%20technology?hl=en-GB&gl=GB&ned=uk
+https://rss.app/feeds/bmNvSnZTD7LItmfW.xml
+http://www.railjournal.com/index.php/feed/rss.html
+https://www.railwaypro.com/wp/feed/
+https://railway-news.com/feed/
+http://www.railwayage.com/index.php/component/option,com_obrss/id,1/lang,en/task,feed/
+https://www.trains.com/feed/
+http://www.progressiverailroading.com/rss/news.asp
+https://media.amtrak.com/feed/
+https://www.youtube.com/feeds/videos.xml?channel_id=UCtuLKvBOePea47aTV7WRQYw
+https://rss.app/feeds/kfuPT5yZU958Sllw.xml
+https://rss.app/feeds/OaCv1Tiyirf0k1tM.xml
+https://rss.app/feeds/G98e3UuWWR8JA6PQ.xml
