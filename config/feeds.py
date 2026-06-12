@@ -1,17 +1,64 @@
 """RSS feed configuration for Brendan's weekly rail intelligence report."""
 
 RSS_FEEDS = {
-    # General rail industry
-    "Railway Insider": "http://www.railwayinsider.eu/wp/feed",
-    "International Railway Journal": "https://www.railjournal.com/feed/",
-    "Progressive Railroading": "http://www.progressiverailroading.com/rss/news.asp",
-    "Amtrak Media": "https://media.amtrak.com/feed/",
-    "Railway Technology": "https://rss.app/feeds/kfuPT5yZU958Sllw.xml",
-    "Metro Magazine": "https://rss.app/feeds/G98e3UuWWR8JA6PQ.xml",
-    "Railway Gazette International": "https://rss.app/feeds/bmNvSnZTD7LItmfW.xml",
+    # Global / international rail news
+    "Railway Gazette": "https://www.railwaygazette.com/149.rss",
+    "Global Railway Review": "https://www.globalrailwayreview.com/news/feed/",
+    "Rail Freight": "https://www.railfreight.com/feed/",
+    "Global Mass Transit": "https://globalmasstransit.net/feed",
 
-    # Add more later after the first successful test.
-    # "Mass Transit Magazine": "https://www.masstransitmag.com/rss",
+    # USA passenger rail / transit / investment
+    "Progressive Railroading News": "https://www.progressiverailroading.com/rss/prnews.asp",
+    "Progressive Railroading Articles": "https://www.progressiverailroading.com/rss/prarticles.asp",
+    "Railway Age": "https://www.railwayage.com/feed/",
+    "Railway Track & Structures": "https://www.rtands.com/feed/",
+    "Trains Magazine": "https://www.trains.com/feed/?post_type=trn",
+    "CTA News": "https://www.transitchicago.com/rss/newsrss.aspx",
+    "CTA Rail Alerts": "https://www.transitchicago.com/rss/railalertsrss.aspx",
+    "Streetsblog USA": "https://usa.streetsblog.org/feed",
+
+    # Spain rail
+    "Trenvista": "https://www.trenvista.net/feed/",
+    "Trenvista English": "https://www.trenvista.net/en/feed/",
+    "El Mercantil": "https://elmercantil.com/feed/",
+
+    # Europe rail
+    "ERA News": "https://www.era.europa.eu/events-news/news_en.xml",
+    "ORR News": "https://www.orr.gov.uk/taxonomy/term/110/feed",
+    "Rail Business Daily": "https://news.railbusinessdaily.com/feed/",
+    "Rail Advent": "https://www.railadvent.co.uk/feed/",
+    "Rail Engineer": "https://www.railengineer.co.uk/feed/",
+    "Europe's Rail": "https://rail-research.europa.eu/feed/",
+
+    # China rail
+    "China Railway Group IR Events": "https://www.ir-cloud.com/china/601390/eventcalendar_e.xml",
+
+    # Suppliers / technology / standards / maintenance
+    "Railway-News": "https://railway-news.com/feed/",
+    "RailTech": "https://www.railtech.com/feed/",
+    "Railcolor News": "https://railcolornews.com/feed/",
+
+    # Contenders / test carefully
+    "Railway Pro": "https://www.railwaypro.com/wp/feed/",
+    "American Rails Blog": "https://www.american-rails.com/railroads.xml",
+    "Rail Delivery Group News": "https://media.raildeliverygroup.com/feed/rss",
+    "Railfan & Railroad": "https://railfan.com/feed",
+    "Cervello Security": "https://cervello.security/feed/",
+    "Railways Africa": "https://www.railways.africa/feed/",
+    "Rail Pace": "https://railpace.com/feed/",
+    "Public Transport Users Association": "https://www.ptua.org.au/feed",
+    "TransLink Buzzer": "https://buzzer.translink.ca/feed",
+    "Land Transport Guru": "https://landtransportguru.net/feed",
+    "Human Transit": "https://humantransit.org/feed",
+    "Mass Transit Magazine": "https://www.masstransitmag.com/__rss/website-scheduled-content.xml",
+    "ETSC": "https://etsc.eu/feed",
+    "The Transport Politic": "https://www.thetransportpolitic.com/feed/",
+    "METRO Magazine": "https://www.metro-magazine.com/rss",
+    "ITDP Blog": "https://itdp.org/feed",
+    "Transport Designed": "https://transportdesigned.com/feed",
+    "Mass Transit Network": "https://masstransit.network/index.rss",
+    "TransitCenter": "https://transitcenter.org/feed",
+    "Second Ave. Sagas": "https://secondavenuesagas.com/feed",
 }
 
 DIGEST_GENERATION_PROMPT = """
