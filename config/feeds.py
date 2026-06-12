@@ -46,13 +46,19 @@ ARTICLES FROM {date_range} ({article_count} articles):
 {article_list}
 
 TASK:
-Create a structured rail-sector intelligence report using only the article information provided.
+Create a structured rail-sector intelligence report using all of the article information provided.
 
 The report must have four main purposes:
-1. Identify the top 10 most relevant rail-sector events from the source material.
-2. Analyze global rail-sector trends.
-3. Analyze USA passenger rail / transit trends.
-4. Identify possible implications for SGS Tecnos in Madrid and for Brendan's future skills/training only when the articles support that analysis.
+1. Select and summarize the top 20 most relevant rail-sector events from the source material.
+2. Analyze global rail-sector trends based on the full article set, not only the top 20.
+3. Analyze USA passenger rail / transit trends based on the full article set, not only the top 20.
+4. Identify possible implications for SGS Tecnos in Madrid and for Brendan's future skills/training only when the full article set supports that analysis.
+
+IMPORTANT DISTINCTION:
+- The "Top 20 relevant rail-sector events" section should contain only the 20 most relevant events.
+- The later analysis sections should consider all articles that were provided, including lower-ranked articles that do not appear in the Top 20.
+- Do not pretend the Top 20 list is the entire dataset.
+- If a lower-ranked article supports an important trend, you may mention it in the trend analysis even if it was not selected for the Top 20.
 
 IMPORTANT RULES:
 - Use only the article information provided.
@@ -70,7 +76,7 @@ IMPORTANT RULES:
 - Prefer the source with the most technical, operational, supplier-specific, maintenance-related, or certification-relevant detail.
 
 RELEVANCE PRIORITIES:
-When selecting the top 10 events, prioritize articles related to:
+When selecting the top 20 events, prioritize articles related to:
 - rolling stock
 - fleet modernization
 - material rodante
@@ -84,6 +90,8 @@ When selecting the top 10 events, prioritize articles related to:
 - onboard electronics
 - signalling, ERTMS, ETCS, CBTC, train-control interfaces
 - safety systems
+- EMC, environmental testing, fire testing, shock and vibration
+- EN 50121, EN 50155, EN 61373, EN 45545, or other rail standards
 - testing, inspection, certification, homologation, conformity assessment
 - major OEMs, suppliers, operators, infrastructure managers, and transit agencies
 - Spain, Europe, USA passenger rail, Amtrak, MTA, MBTA, NJ Transit, SEPTA, WMATA, CTA, Metra, BART, Caltrain, LA Metro, Sound Transit, DART, MARTA, RTD Denver, FRA, FTA, NEC Commission, USDOT rail investment programs
@@ -93,7 +101,7 @@ Return clean semantic HTML only. Do not include html, head, or body tags.
 
 Use exactly this structure:
 
-<h2>Top 10 relevant rail-sector events</h2>
+<h2>Top 20 relevant rail-sector events</h2>
 <p>This section should be factual only. Do not include personalized analysis here.</p>
 
 For each event, use this format:
@@ -102,19 +110,20 @@ For each event, use this format:
 <ul>
   <li><strong>Summary:</strong> 2 to 4 sentence general summary of what happened.</li>
   <li><strong>Source:</strong> <a href="ARTICLE_URL">Article title / publication</a></li>
-  <li><strong>Region:</strong> Global / Europe / Spain / USA / other</li>
+  <li><strong>Region:</strong> Global / Europe / Spain / USA / China / other</li>
   <li><strong>Main category:</strong> rolling stock / infrastructure / signalling / safety / procurement / policy / supplier / maintenance / certification / other</li>
 </ul>
 
 Rules for this section:
-- Include up to 10 events.
-- If fewer than 10 events are genuinely relevant, include fewer than 10.
+- Include up to 20 events.
+- If fewer than 20 events are genuinely relevant, include fewer than 20.
+- Merge duplicate coverage into one event.
 - This section must not discuss Brendan, SGS Tecnos, Erion, career implications, or personalized recommendations.
 - This section must only summarize the news itself.
 
 <h2>Global rail-sector trends</h2>
-Analyze the broader global patterns suggested by the articles. Focus on sector-level trends, not personal implications.
-Use 3 to 6 concise paragraphs or bullets.
+Analyze the broader global patterns suggested by the entire article set, not only the Top 20.
+Use 3 to 8 concise paragraphs or bullets.
 Possible trend categories include:
 <ul>
   <li>fleet modernization</li>
@@ -128,7 +137,7 @@ Possible trend categories include:
 </ul>
 
 <h2>USA passenger rail and transit trends</h2>
-Analyze USA-specific patterns only if the article set includes relevant USA items.
+Analyze USA-specific patterns using the entire article set.
 If there are no relevant USA items, write: "No major USA-specific trend is supported by this article set."
 When relevant, discuss:
 <ul>
@@ -142,7 +151,7 @@ When relevant, discuss:
 </ul>
 
 <h2>Potential impact on SGS Tecnos Madrid</h2>
-Only include analysis supported by the articles.
+Only include analysis supported by the article set.
 If there is no realistic connection to SGS Tecnos, testing, inspection, certification, standards, lab capabilities, suppliers, or conformity assessment, write:
 "No clear SGS Tecnos impact is supported by this article set."
 
@@ -163,7 +172,7 @@ Rules for this section:
 - Prefer "possible relevance" and "worth watching" language.
 
 <h2>Skills, experience, and training signals</h2>
-Only include this section if the articles support meaningful conclusions about valuable skills, experience, or training.
+Only include this section if the full article set supports meaningful conclusions about valuable skills, experience, or training.
 If not, write:
 "No clear skills or training signal is supported by this article set."
 
@@ -189,7 +198,7 @@ Focus especially on:
 - safety, reliability, and entry-into-service testing
 
 <h2>Source list</h2>
-List all articles considered.
+List all articles considered, not only the Top 20.
 For each source, include:
 <ul>
   <li><a href="ARTICLE_URL">Article title</a> — feed/publication, date, one-line topic</li>
