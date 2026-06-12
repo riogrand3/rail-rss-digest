@@ -65,11 +65,11 @@ class EmailSender:
                 full_html = self._create_simple_template(digest_html, date_range)
 
             # Create email
-            subject = f"Your Weekly RSS Digest: {date_range} ({article_count} articles)"
+            subject = f"Rail Intelligence Brief: {date_range} ({article_count} articles scanned)"
 
             msg = MIMEMultipart('alternative')
             msg['Subject'] = subject
-            msg['From'] = f"RSS Digest <{self.from_email}>"
+            msg['From'] = f"Rail Intelligence <{self.from_email}>"
             msg['To'] = recipient_email
 
             # Attach HTML content
