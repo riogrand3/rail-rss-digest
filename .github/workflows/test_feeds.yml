@@ -1,0 +1,59 @@
+name: Test RSS Feeds
+
+on:
+  workflow_dispatch:
+    inputs:
+      recent_days:
+        description: "Count articles as recent if published within this many days"
+        required: false
+        type: string
+        default: "14"
+      fail_on_zero:
+        description: "Fail if any feed returns zero entries"
+        required: false
+        type: boolean
+        default: false
+      fail_on_no_recent:
+        description: "Fail if any feed has no recent entries"
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  test-rss-feeds:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Set up Python
+        run: uv python install 3.13
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Test RSS feeds
+        run: |
+          RECENT_DAYS="${{ inputs.recent_days }}"
+          if [ -z "$RECENT_DAYS" ]; then
+            RECENT_DAYS="14"
+          fi
+
+          COMMAND="uv run python scripts/test_feeds.py --recent-days $RECENT_DAYS"
+
+          if [ "${{ inputs.fail_on_zero }}" = "true" ]; then
+            COMMAND="$COMMAND --fail-on-zero"
+          fi
+
+          if [ "${{ inputs.fail_on_no_recent }}" = "true" ]; then
+            COMMAND="$COMMAND --fail-on-no-recent"
+          fi
+
+          echo "Running: $COMMAND"
+          $COMMAND
