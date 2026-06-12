@@ -92,7 +92,7 @@ class LLMProcessor:
                     }
                 ],
                 temperature=0.5,  # Balanced for analysis and creative synthesis
-                max_tokens=4000  # Larger limit for full digest with analysis
+                max_tokens=8000  # Larger limit for full digest with analysis
             )
 
             # Track token usage
