@@ -84,7 +84,7 @@ class LLMProcessor:
                 messages=[
                     {
                         "role": "system",
-                        "content": "You are a skilled editor creating weekly news digests for data journalists. Analyze the provided articles and create a comprehensive digest in clean, semantic HTML."
+                        "content": "You are a rail-sector intelligence analyst. Create concise, factual, non-repetitive reports from RSS article metadata. Separate confirmed facts from cautious implications. Return clean semantic HTML only."
                     },
                     {
                         "role": "user",
