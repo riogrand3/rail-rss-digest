@@ -1,64 +1,38 @@
 """RSS feed configuration for Brendan's weekly rail intelligence report."""
 
 RSS_FEEDS = {
-    # Global / international rail news
-    "Railway Gazette": "https://www.railwaygazette.com/149.rss",
-    "Global Railway Review": "https://www.globalrailwayreview.com/news/feed/",
-    "Rail Freight": "https://www.railfreight.com/feed/",
+    # Core global / international rail news
+    "Railway-News": "https://railway-news.com/feed/",
     "Global Mass Transit": "https://globalmasstransit.net/feed",
+    "Railway Pro": "https://www.railwaypro.com/wp/feed/",
+    "Railcolor News": "https://railcolornews.com/feed/",
+    "Railways Africa": "https://www.railways.africa/feed/",
 
-    # USA passenger rail / transit / investment
+    # USA passenger rail / commuter rail / transit / infrastructure
     "Progressive Railroading News": "https://www.progressiverailroading.com/rss/prnews.asp",
-    "Progressive Railroading Articles": "https://www.progressiverailroading.com/rss/prarticles.asp",
     "Railway Age": "https://www.railwayage.com/feed/",
     "Railway Track & Structures": "https://www.rtands.com/feed/",
-    "Trains Magazine": "https://www.trains.com/feed/?post_type=trn",
-    "CTA News": "https://www.transitchicago.com/rss/newsrss.aspx",
-    "CTA Rail Alerts": "https://www.transitchicago.com/rss/railalertsrss.aspx",
+    "METRO Magazine": "https://www.metro-magazine.com/rss",
+    "Rail Pace": "https://railpace.com/feed/",
     "Streetsblog USA": "https://usa.streetsblog.org/feed",
 
-    # Spain rail
-    "Trenvista": "https://www.trenvista.net/feed/",
+    # Spain / Spanish-language rail and transport
     "Trenvista English": "https://www.trenvista.net/en/feed/",
     "El Mercantil": "https://elmercantil.com/feed/",
 
-    # Europe rail
-    "ERA News": "https://www.era.europa.eu/events-news/news_en.xml",
-    "ORR News": "https://www.orr.gov.uk/taxonomy/term/110/feed",
+    # Europe / UK rail, policy, regulation, and operations
     "Rail Business Daily": "https://news.railbusinessdaily.com/feed/",
-    "Rail Advent": "https://www.railadvent.co.uk/feed/",
     "Rail Engineer": "https://www.railengineer.co.uk/feed/",
-    "Europe's Rail": "https://rail-research.europa.eu/feed/",
-
-    # China rail
-    "China Railway Group IR Events": "https://www.ir-cloud.com/china/601390/eventcalendar_e.xml",
-
-    # Suppliers / technology / standards / maintenance
-    "Railway-News": "https://railway-news.com/feed/",
-    "RailTech": "https://www.railtech.com/feed/",
-    "Railcolor News": "https://railcolornews.com/feed/",
-
-    # Contenders / test carefully
-    "Railway Pro": "https://www.railwaypro.com/wp/feed/",
-    "American Rails Blog": "https://www.american-rails.com/railroads.xml",
+    "ORR News": "https://www.orr.gov.uk/taxonomy/term/110/feed",
     "Rail Delivery Group News": "https://media.raildeliverygroup.com/feed/rss",
-    "Railfan & Railroad": "https://railfan.com/feed",
-    "Cervello Security": "https://cervello.security/feed/",
-    "Railways Africa": "https://www.railways.africa/feed/",
-    "Rail Pace": "https://railpace.com/feed/",
-    "Public Transport Users Association": "https://www.ptua.org.au/feed",
-    "TransLink Buzzer": "https://buzzer.translink.ca/feed",
-    "Land Transport Guru": "https://landtransportguru.net/feed",
-    "Human Transit": "https://humantransit.org/feed",
-    "Mass Transit Magazine": "https://www.masstransitmag.com/__rss/website-scheduled-content.xml",
+    "Europe's Rail": "https://rail-research.europa.eu/feed/",
+    "ERA News": "https://www.era.europa.eu/events-news/news_en.xml",
+
+    # Safety / standards / technology / supplier-adjacent
     "ETSC": "https://etsc.eu/feed",
-    "The Transport Politic": "https://www.thetransportpolitic.com/feed/",
-    "METRO Magazine": "https://www.metro-magazine.com/rss",
+    "Cervello Security": "https://cervello.security/feed/",
     "ITDP Blog": "https://itdp.org/feed",
-    "Transport Designed": "https://transportdesigned.com/feed",
-    "Mass Transit Network": "https://masstransit.network/index.rss",
-    "TransitCenter": "https://transitcenter.org/feed",
-    "Second Ave. Sagas": "https://secondavenuesagas.com/feed",
+    
 }
 
 DIGEST_GENERATION_PROMPT = """
