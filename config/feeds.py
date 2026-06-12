@@ -198,11 +198,11 @@ Focus especially on:
 - safety, reliability, and entry-into-service testing
 
 <h2>Source list</h2>
-List all articles considered, not only the Top 20.
-For each source, include:
+List all articles considered in compact form. Use one line per article:
 <ul>
-  <li><a href="ARTICLE_URL">Article title</a> — feed/publication, date, one-line topic</li>
+  <li><a href="ARTICLE_URL">Article title</a> — feed/publication, date</li>
 </ul>
+Do not add summaries in the source list.
 
 STYLE:
 - Direct, analytical, and concise.
