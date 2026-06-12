@@ -15,102 +15,9 @@ RSS_FEEDS = {
 }
 
 DIGEST_GENERATION_PROMPT = """
-You are generating a twice-weekly rail-sector intelligence brief for Brendan Warner.
+You are generating a twice-weekly rail-sector intelligence report for Brendan Warner.
 
-CONTEXT ABOUT BRENDAN:
-Brendan is a mechanical engineer from the United States working in Madrid, Spain. He is developing a career in passenger rail, rolling stock maintenance, rail systems integration, testing, inspection, certification, and technical documentation.
-
-He works at SGS Tecnos in Madrid, where he is helping develop a rail testing, inspection, and certification business line. He is especially interested in identifying realistic opportunities related to rolling stock electronic equipment, EMC, environmental testing, shock and vibration, fire safety, power electronics, suppliers, certification, conformity assessment, and standards-driven testing.
-
-He is also working as a technician at Erion in Madrid. He wants practical guidance for making the most of time around experienced rail maintenance professionals: what to ask, what to observe, what systems to learn, what Spanish/English technical vocabulary to develop, and how to connect hands-on maintenance experience with future engineering, testing, certification, and systems-integration roles.
-
-LONG-TERM CAREER DIRECTION:
-Brendan is interested in roles such as:
-- rolling stock systems integration engineer
-- rail systems engineer
-- rolling stock maintenance engineer
-- equipment engineer
-- testing / validation / verification engineer
-- certification / conformity assessment engineer
-- technical documentation or requirements engineer
-- fleet modernization or depot/workshop technology specialist
-
-Companies and organizations of interest include:
-- SGS Tecnos
-- Erion
-- Renfe
-- ADIF
-- Metro de Madrid
-- CAF
-- Talgo
-- Alstom
-- Siemens Mobility
-- Stadler
-- Amtrak
-- Renfe
-- ADIF
-- Metro de Madrid
-- CAF
-- Talgo
-- Alstom
-- Siemens Mobility
-- Stadler
-- Amtrak
-- MTA / New York City Transit
-- MTA Long Island Rail Road
-- MTA Metro-North Railroad
-- NJ Transit
-- WMATA / Washington Metro
-- MBTA
-- SEPTA
-- Chicago Transit Authority / CTA
-- Chicago Metra
-- BART / Bay Area Rapid Transit
-- LA Metro
-- Caltrain
-- Sound Transit
-- MARTA
-- DART / Dallas Area Rapid Transit
-- RTD Denver
-- Federal Railroad Administration / FRA
-- Federal Transit Administration / FTA
-- USDOT Build America Bureau
-- Northeast Corridor Commission
-- California State Transportation Agency / CalSTA and Caltrans Division of Rail and Mass Transportation
-- Wabtec
-- Knorr-Bremse
-- ABB
-- Schneider Electric
-- TÜV SÜD
-- TÜV Rheinland
-- Bureau Veritas
-- Applus+
-- SGS
-
-PRIORITY TOPICS:
-Prioritize articles related to:
-- rolling stock
-- material rodante
-- fleet modernization
-- depot and workshop technology
-- maintenance, overhaul, inspection, diagnostics
-- predictive maintenance and condition monitoring
-- traction systems
-- motors
-- converters, inverters, auxiliary power, batteries, chargers, UPS
-- onboard electronics
-- signalling, ERTMS, ETCS, CBTC, train control
-- EMC and EN 50121
-- EN 50155
-- EN 61373
-- EN 45545
-- environmental testing
-- shock and vibration
-- testing, inspection, certification, homologation, conformity assessment
-- rail suppliers and component manufacturers
-- Spanish and European rail projects
-- Renfe, ADIF, Metro de Madrid, CAF, Talgo, Alstom, Siemens, Stadler
-- investment into passenger rail in the USA
+Brendan is a mechanical engineer in Madrid working between rail testing/certification work at SGS Tecnos and hands-on rail maintenance exposure at Erion. He is interested in passenger rail, rolling stock, maintenance, systems integration, testing, inspection, certification, technical documentation, fleet modernization, and future rail engineering roles.
 
 SOURCE MATERIAL:
 ARTICLES FROM {date_range} ({article_count} articles):
@@ -118,105 +25,161 @@ ARTICLES FROM {date_range} ({article_count} articles):
 {article_list}
 
 TASK:
-Create a concise rail intelligence brief. Do not write a generic news summary. Select and interpret the most relevant developments for Brendan.
+Create a structured rail-sector intelligence report using only the article information provided.
 
-ANTI-REPETITION RULES:
-- Mention each article's basic facts only once.
-- Do not repeat the same article in every section.
-- Later sections must add new interpretation, not restate summaries.
-- If an article has no clear relevance to SGS, Erion, rolling stock, maintenance, testing, or certification, keep it brief or omit it from detailed analysis.
-- Group similar articles together instead of analyzing them separately.
-- Avoid repeating company names, standards, or opportunities unless there is a new reason to mention them.
-- Be concise. Prefer 1 strong paragraph over 5 weak bullets.
+The report must have four main purposes:
+1. Identify the top 10 most relevant rail-sector events from the source material.
+2. Analyze global rail-sector trends.
+3. Analyze USA passenger rail / transit trends.
+4. Identify possible implications for SGS Tecnos in Madrid and for Brendan's future skills/training only when the articles support that analysis.
 
-DUPLICATE HANDLING:
-Some feeds may report the same story. Merge duplicate or near-duplicate articles into one development. If two articles cover the same event, cite both links together but analyze the story only once. Do not create separate priority briefings for duplicate versions of the same story.
+IMPORTANT RULES:
+- Use only the article information provided.
+- Do not invent facts, contracts, internal company information, technical details, or private strategy.
+- Clearly separate confirmed article facts from possible implications.
+- Use cautious language: "may indicate", "possible implication", "worth watching", "not confirmed by the article".
+- Do not overstate SGS relevance.
+- If there are no relevant SGS Tecnos implications, say so directly.
+- If the source material does not support a skills/training projection, omit that section or state that no clear training signal is present.
+- Do not repeat the same article summary in multiple sections.
+- Mention the basic facts of each article only once.
+- Merge duplicate or near-duplicate articles into one event.
+- If multiple sources cover the same event, cite/link them together under the same event.
+- Do not give extra importance to an event only because it appears in multiple feeds.
+- Prefer the source with the most technical, operational, supplier-specific, maintenance-related, or certification-relevant detail.
 
-SOURCE PRIORITY:
-When multiple sources cover the same story, prefer the article with the most technical, operational, supplier-specific, maintenance-related, or certification-relevant detail. Do not give extra importance to a story only because it appears in multiple feeds.
-
-RELEVANCE FILTER:
-Only analyze articles in detail if they are relevant to at least one of:
+RELEVANCE PRIORITIES:
+When selecting the top 10 events, prioritize articles related to:
 - rolling stock
+- fleet modernization
 - material rodante
-- maintenance
-- depot/workshop operations
+- passenger rail operations
+- rail maintenance
+- depot and workshop technology
+- inspection, diagnostics, overhaul, reliability
 - traction systems
 - motors
-- converters, inverters, auxiliary power, batteries, chargers, UPS
-- onboard electronics
-- signalling, train control, ERTMS, ETCS, CBTC
-- safety systems
-- testing, inspection, certification, standards, homologation
-- Spain, Europe, US passenger rail, or target companies
-
-All other articles should appear only in the source list.
-
-PRIORITY TOPICS:
-Prioritize:
-- rolling stock and fleet modernization
-- material rodante
-- depot/workshop technology
-- maintenance, diagnostics, overhaul, inspections
-- traction, converters, inverters, motors, auxiliary power, batteries, chargers, UPS
+- converters, inverters, batteries, chargers, auxiliary power, UPS
 - onboard electronics
 - signalling, ERTMS, ETCS, CBTC, train-control interfaces
-- EMC, EN 50121, EN 50155, EN 61373, EN 45545
-- environmental, shock/vibration, and fire testing
+- safety systems
 - testing, inspection, certification, homologation, conformity assessment
-- Spanish, European, and US passenger rail
-- suppliers, OEMs, operators, and fleet modernization programs
+- major OEMs, suppliers, operators, infrastructure managers, and transit agencies
+- Spain, Europe, USA passenger rail, Amtrak, MTA, MBTA, NJ Transit, SEPTA, WMATA, CTA, Metra, BART, Caltrain, LA Metro, Sound Transit, DART, MARTA, RTD Denver, FRA, FTA, NEC Commission, USDOT rail investment programs
 
 OUTPUT FORMAT:
 Return clean semantic HTML only. Do not include html, head, or body tags.
 
-Use this structure:
+Use exactly this structure:
 
-<h2>Executive summary</h2>
-One short paragraph with the main pattern across the articles.
+<h2>Top 10 relevant rail-sector events</h2>
+<p>This section should be factual only. Do not include personalized analysis here.</p>
 
-<h2>Priority briefings</h2>
-Select only the 5 to 8 most important developments. For each:
-<h3>Article title</h3>
+For each event, use this format:
+
+<h3>1. Event title</h3>
 <ul>
-  <li><strong>What happened:</strong> factual summary in 1 sentence</li>
-  <li><strong>Why it matters:</strong> practical rail-sector meaning</li>
-  <li><strong>Relevance:</strong> High / Medium / Low</li>
-  <li><strong>Main lens:</strong> rolling stock / maintenance / signalling / TIC / supplier / policy / safety / other</li>
+  <li><strong>Summary:</strong> 2 to 4 sentence general summary of what happened.</li>
+  <li><strong>Source:</strong> <a href="ARTICLE_URL">Article title / publication</a></li>
+  <li><strong>Region:</strong> Global / Europe / Spain / USA / other</li>
+  <li><strong>Main category:</strong> rolling stock / infrastructure / signalling / safety / procurement / policy / supplier / maintenance / certification / other</li>
 </ul>
 
-<h2>Cross-cutting patterns</h2>
-Do not repeat article summaries. Identify 2 to 4 patterns across the week, such as fleet renewal, signalling modernization, safety, certification demand, maintenance technology, supplier movement, or digitalization.
+Rules for this section:
+- Include up to 10 events.
+- If fewer than 10 events are genuinely relevant, include fewer than 10.
+- This section must not discuss Brendan, SGS Tecnos, Erion, career implications, or personalized recommendations.
+- This section must only summarize the news itself.
 
-<h2>SGS Tecnos / TIC relevance</h2>
-Only discuss articles with a plausible testing, inspection, certification, conformity assessment, EMC, environmental, mechanical, fire, or standards angle.
-For each relevant theme, include:
+<h2>Global rail-sector trends</h2>
+Analyze the broader global patterns suggested by the articles. Focus on sector-level trends, not personal implications.
+Use 3 to 6 concise paragraphs or bullets.
+Possible trend categories include:
 <ul>
-  <li><strong>Possible TIC angle:</strong></li>
-  <li><strong>Standards possibly involved:</strong></li>
+  <li>fleet modernization</li>
+  <li>rolling stock procurement</li>
+  <li>infrastructure investment</li>
+  <li>signalling and digitalization</li>
+  <li>maintenance and reliability</li>
+  <li>safety and regulation</li>
+  <li>supplier/OEM movement</li>
+  <li>testing, inspection, certification, and standards</li>
+</ul>
+
+<h2>USA passenger rail and transit trends</h2>
+Analyze USA-specific patterns only if the article set includes relevant USA items.
+If there are no relevant USA items, write: "No major USA-specific trend is supported by this article set."
+When relevant, discuss:
+<ul>
+  <li>Amtrak</li>
+  <li>commuter rail</li>
+  <li>urban rail / metro / light rail</li>
+  <li>major transit agencies</li>
+  <li>federal or state investment</li>
+  <li>fleet procurement and modernization</li>
+  <li>maintenance, reliability, safety, or certification implications</li>
+</ul>
+
+<h2>Potential impact on SGS Tecnos Madrid</h2>
+Only include analysis supported by the articles.
+If there is no realistic connection to SGS Tecnos, testing, inspection, certification, standards, lab capabilities, suppliers, or conformity assessment, write:
+"No clear SGS Tecnos impact is supported by this article set."
+
+When relevant, use this structure:
+<ul>
+  <li><strong>Possible impact:</strong> cautious explanation</li>
+  <li><strong>Relevant article/event:</strong> article or event name</li>
+  <li><strong>Possible TIC angle:</strong> testing / inspection / certification / standards / homologation / conformity assessment / supplier support</li>
+  <li><strong>Standards or technical areas possibly involved:</strong> list only if reasonably inferable</li>
   <li><strong>Confidence:</strong> High / Medium / Low</li>
-  <li><strong>Follow-up question:</strong></li>
+  <li><strong>Follow-up question:</strong> one practical question Brendan could ask internally at SGS Tecnos</li>
 </ul>
-Be conservative. Do not invent SGS capabilities, clients, or opportunities.
 
-<h2>Erion / technician learning</h2>
-Do not repeat news summaries. Translate the week into practical learning prompts:
+Rules for this section:
+- Do not invent SGS clients.
+- Do not invent SGS capabilities.
+- Do not claim a commercial opportunity is definite unless the article directly supports it.
+- Prefer "possible relevance" and "worth watching" language.
+
+<h2>Skills, experience, and training signals</h2>
+Only include this section if the articles support meaningful conclusions about valuable skills, experience, or training.
+If not, write:
+"No clear skills or training signal is supported by this article set."
+
+When relevant, discuss:
 <ul>
-  <li><strong>Ask:</strong> questions to ask experienced technicians</li>
-  <li><strong>Observe:</strong> systems, components, procedures, or failure modes to watch</li>
-  <li><strong>Vocabulary:</strong> Spanish / English technical terms to learn</li>
+  <li><strong>Most valuable technical skills:</strong></li>
+  <li><strong>Most valuable hands-on experience:</strong></li>
+  <li><strong>Most valuable standards/certification knowledge:</strong></li>
+  <li><strong>Most valuable software, data, or documentation skills:</strong></li>
+  <li><strong>Why these skills appear valuable based on this week's articles:</strong></li>
 </ul>
 
-<h2>Suggested actions before the next report</h2>
-Give 5 concrete actions. Keep them realistic for someone working/studying in Madrid.
+Focus especially on:
+- rolling stock maintenance
+- traction systems
+- onboard electronics
+- signalling interfaces
+- diagnostics and condition monitoring
+- depot/workshop technology
+- technical documentation
+- requirements, verification, and validation
+- rail standards and conformity assessment
+- safety, reliability, and entry-into-service testing
 
 <h2>Source list</h2>
-List every article considered, with clickable title, feed name, and date. If multiple articles covered the same story, group them under the same source-list item where practical.
+List all articles considered.
+For each source, include:
+<ul>
+  <li><a href="ARTICLE_URL">Article title</a> — feed/publication, date, one-line topic</li>
+</ul>
 
 STYLE:
-- Direct, technical, and concise.
-- No hype.
-- No repeated explanations.
-- Separate confirmed facts from possible implications.
-- Use cautious language: "possible", "may indicate", "worth watching", "not confirmed by the article".
+- Direct, analytical, and concise.
+- Avoid hype.
+- Avoid repeated summaries.
+- Do not pad the report.
+- Prefer clear, useful analysis over long explanation.
+- Write in English.
+- Preserve important Spanish technical terms when useful, such as material rodante, homologación, mantenimiento, ensayos, certificación, señalización, tracción, and taller.
 """
